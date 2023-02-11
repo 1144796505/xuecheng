@@ -21,19 +21,19 @@ public class ContentCodeGenerator {
 	//数据库账号
 	private static final String DATA_SOURCE_USER_NAME  = "root";
 	//数据库密码
-	private static final String DATA_SOURCE_PASSWORD  = "mysql";
+	private static final String DATA_SOURCE_PASSWORD  = "521wanwan";
 	//生成的表
 	private static final String[] TABLE_NAMES = new String[]{
 		//	"mq_message",
 		//	"mq_message_history"
-			 "course_base",
-			 "course_market",
-			 "teachplan",
-			 "teachplan_media",
-			 "course_teacher",
+//			 "course_base",
+//			 "course_market",
+//			 "teachplan",
+//			 "teachplan_media",
+//			 "course_teacher",
 //			 "course_publish",
 //			 "course_publish_pre"
-//			"course_category"
+			"course_category"
 	};
 
 	// TODO 默认生成entity，需要生成DTO修改此变量
@@ -66,7 +66,7 @@ public class ContentCodeGenerator {
 		// 数据库配置
 		DataSourceConfig dsc = new DataSourceConfig();
 		dsc.setDbType(DbType.MYSQL);
-		dsc.setUrl("jdbc:mysql://192.168.65.131:3306/xcplus_" + SERVICE_NAME
+		dsc.setUrl("jdbc:mysql://127.0.0.1:3307/xczx_" + SERVICE_NAME
 				+ "?serverTimezone=UTC&useUnicode=true&useSSL=false&characterEncoding=utf8");
 //		dsc.setDriverName("com.mysql.jdbc.Driver");
 		dsc.setDriverName("com.mysql.cj.jdbc.Driver");

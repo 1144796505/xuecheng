@@ -3,6 +3,7 @@ package com.xuecheng.content.service;
 import com.xuecheng.base.model.PageParams;
 import com.xuecheng.base.model.PageResult;
 import com.xuecheng.content.mapper.CourseBaseMapper;
+import com.xuecheng.content.model.dto.CourseCategoryTreeDto;
 import com.xuecheng.content.model.dto.QueryCourseParamsDto;
 import com.xuecheng.content.model.po.CourseBase;
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +22,9 @@ class XuechengPlusContentServiceApplicationTests {
     @Autowired
     private CourseBaseInfoService CourseBaseInfoService;
 
+    @Autowired
+    private CourseCategoryService courseCategoryService;
+
     @Test
     void contextLoads() {
         CourseBase courseBase = courseBaseMapper.selectById(22);
@@ -33,6 +37,12 @@ class XuechengPlusContentServiceApplicationTests {
         PageResult<CourseBase> courseBasePageResult = CourseBaseInfoService.queryCourseBaseList(pageParams, new QueryCourseParamsDto());
 
         System.out.println(courseBasePageResult);
+    }
+
+    @Test
+    void contextcourseCategoryService() {
+        List<CourseCategoryTreeDto> courseCategoryTreeDtos = courseCategoryService.queryTreeNodes("1");
+        System.out.println(courseCategoryTreeDtos);
     }
 
 }
