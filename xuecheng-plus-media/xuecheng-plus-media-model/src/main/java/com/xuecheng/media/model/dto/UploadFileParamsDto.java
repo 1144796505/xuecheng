@@ -48,6 +48,11 @@ public class UploadFileParamsDto {
   */
  private String remark;
 
+ /**
+  * 路径
+  */
+ private String filePath;
+
 
 
 }
